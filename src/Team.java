@@ -37,17 +37,17 @@ public class Team<T extends Player> {
         return members.size();
     }
 
-    public void matchResult(Team opponentTeam, int ourScore, int oppScores) {
+    public void matchResult(Team<T> opponentTeam, int ourScore, int oppScores) {
         String message;
         if (ourScore > oppScores) {
             won++;
             message = " won ";
         } else if (oppScores > ourScore) {
             draw++;
-            message = " drew ";
+            message = " drew with ";
         } else {
             lost++;
-            message = " lost ";
+            message = " lost to ";
         }
         played++;
         if (opponentTeam != null) {

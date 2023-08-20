@@ -30,11 +30,15 @@ public class Main {
         Team<FootballPlayer> tusker = new Team<>("Tusker");
 
         afc.matchResult(tusker,3,1);
-        afc.matchResult(bafana,2,1);
+//        afc.matchResult(bafana,2,1);
 
-        tusker.matchResult(bafana,2,2);
+//        tusker.matchResult(bafana,2,2);
         tusker.matchResult(afc,1,0);
 
+
+        System.out.println("Rankings");
+        System.out.println(afc.getName() + " : " + afc.ranking());
+        System.out.println(tusker.getName() + " : " + tusker.ranking());
 
 
 
