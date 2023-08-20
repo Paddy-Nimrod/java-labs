@@ -7,12 +7,26 @@ public class Main {
         FootballPlayer tavan = new FootballPlayer("Tavan");
         SoccerPlayer ronaldo = new SoccerPlayer("Ronaldo");
 
-        Team liverpool = new Team("Liverpool");
-        liverpool.addPlayer(young);
+        Team<FootballPlayer> liverpool = new Team<>("Liverpool");
+//        liverpool.addPlayer(young);
         liverpool.addPlayer(tavan);
-        liverpool.addPlayer(ronaldo);
+//        liverpool.addPlayer(ronaldo);
 
         System.out.println(liverpool.numOfPlayers());
+
+        Team<BaseballPlayer> bafana = new Team<>("Bafana");
+
+        bafana.addPlayer(young);
+
+
+        Team<SoccerPlayer> team = new Team<>("arrow");
+        team.addPlayer(ronaldo);
+
+
+
+
+
+
 
         ArrayList<Integer> items = new ArrayList<>();
         items.add(1);
@@ -25,9 +39,7 @@ public class Main {
     }
 
     private static void printDoubled(ArrayList<Integer> items) {
-        for (int i : items) {
-
-        }
+        for (int i : items) System.out.println("i = " + i);
     }
 
 }
