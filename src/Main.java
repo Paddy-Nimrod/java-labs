@@ -41,6 +41,7 @@ public class Main {
         System.out.println(tusker.getName() + " : " + tusker.ranking());
 
 
+        System.out.println(afc.compareTo(tusker));
 
 
         ArrayList<Integer> items = new ArrayList<>();
