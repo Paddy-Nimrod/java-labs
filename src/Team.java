@@ -1,13 +1,13 @@
 import java.util.ArrayList;
 
 public class Team<T extends Player> {
+    private final String name;
+    private final ArrayList<T> members = new ArrayList<>();
     int played = 0;
     int won = 0;
     int lost = 0;
     int draw = 0;
     int goalDifference = 0;
-    private final String name;
-    private final ArrayList<T> members = new ArrayList<>();
 
     public Team(String name) {
         this.name = name;
@@ -38,17 +38,22 @@ public class Team<T extends Player> {
     }
 
     public void matchResult(Team opponentTeam, int ourScore, int oppScores) {
+        String message;
         if (ourScore > oppScores) {
             won++;
-            System.out.println("We have recorded a win on this game.");
+            message = " won ";
         } else if (oppScores > ourScore) {
             draw++;
+            message = " drew ";
         } else {
             lost++;
+            message = " lost ";
         }
         played++;
         if (opponentTeam != null) {
             opponentTeam.matchResult(null, ourScore, oppScores);
+            System.out.println(this.getName() + " vs " + opponentTeam.getName());
+            System.out.println(this.getName() + message + opponentTeam.getName());
         }
     }
 

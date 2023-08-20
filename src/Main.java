@@ -22,7 +22,18 @@ public class Main {
         Team<SoccerPlayer> team = new Team<>("arrow");
         team.addPlayer(ronaldo);
 
+        Team<FootballPlayer> harambee = new Team<>("Harambee");
+        FootballPlayer oliech = new FootballPlayer("Denis Oliech");
+        harambee.addPlayer(oliech);
 
+        Team<FootballPlayer> afc = new Team<>("AFC Leopards");
+        Team<FootballPlayer> tusker = new Team<>("Tusker");
+
+        afc.matchResult(tusker,3,1);
+        afc.matchResult(bafana,2,1);
+
+        tusker.matchResult(bafana,2,2);
+        tusker.matchResult(afc,1,0);
 
 
 
