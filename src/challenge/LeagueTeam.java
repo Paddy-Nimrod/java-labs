@@ -1,6 +1,6 @@
 package challenge;
 
-public class LeagueTeam<T> {
+public class LeagueTeam<T> implements Comparable<LeagueTeam<T>> {
     private String name;
     int played = 0;
     int won = 0;
@@ -18,5 +18,20 @@ public class LeagueTeam<T> {
     @Override
     public String toString() {
         return this.name;
+    }
+
+    public int ranking() {
+        return (won * 3) + draw;
+    }
+
+    @Override
+    public int compareTo(LeagueTeam<T> team) {
+        if (this.ranking() > team.ranking()) {
+            return -1;
+        } else if (this.ranking() < team.ranking()) {
+            return 1;
+        } else {
+            return 0;
+        }
     }
 }

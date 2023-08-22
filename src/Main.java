@@ -1,5 +1,6 @@
 import challenge.League;
 import challenge.LeagueTeam;
+import challenge.teams.BasketBallTeam;
 import challenge.teams.FootBallTeam;
 
 public class Main {
@@ -12,17 +13,18 @@ public class Main {
         LeagueTeam<FootBallTeam> afc = new LeagueTeam<>("AFC Leopards");
         LeagueTeam<FootBallTeam> gor = new LeagueTeam<>("Gor Mahia");
 
+        LeagueTeam<BasketBallTeam> lakers = new LeagueTeam<>("Lakers");
 
         epl.addTeam(liverpool);
         epl.addTeam(chelsea);
         epl.addTeam(afc);
         epl.addTeam(gor);
 
+        epl.addTeam(lakers);
         System.out.println(epl.getTeams());
 
 
-        System.out.println(epl.sortAllTeams());
-
+        epl.sortAllTeams();
 
 
 //        BaseballPlayer young = new BaseballPlayer("Young");

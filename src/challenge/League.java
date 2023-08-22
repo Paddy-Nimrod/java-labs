@@ -2,11 +2,12 @@ package challenge;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.List;
+
+
 
 public class League<T extends LeagueTeam> {
     private String name;
-    private List<LeagueTeam> teams = new ArrayList<>();
+    private ArrayList<T> teams = new ArrayList<>();
 
 
     public League(String name) {
@@ -28,12 +29,15 @@ public class League<T extends LeagueTeam> {
         return name;
     }
 
-    public List<LeagueTeam> getTeams() {
+    public ArrayList<T> getTeams() {
         return teams;
     }
 
     public void sortAllTeams(){
         Collections.sort(teams);
+        for (T t: teams){
+            System.out.println(t.getName() + " : " + t.ranking());
+        }
     }
 
 }
