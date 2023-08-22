@@ -1,61 +1,69 @@
-import java.util.ArrayList;
+import challenge.League;
+import challenge.LeagueTeam;
+import challenge.teams.FootBallTeam;
 
 public class Main {
     public static void main(String[] args) {
 
-        BaseballPlayer young = new BaseballPlayer("Young");
-        FootballPlayer tavan = new FootballPlayer("Tavan");
-        SoccerPlayer ronaldo = new SoccerPlayer("Ronaldo");
+        League epl = new League("English Premier League");
 
-        Team<FootballPlayer> liverpool = new Team<>("Liverpool");
-//        liverpool.addPlayer(young);
-        liverpool.addPlayer(tavan);
-//        liverpool.addPlayer(ronaldo);
-
-        System.out.println(liverpool.numOfPlayers());
-
-        Team<BaseballPlayer> bafana = new Team<>("Bafana");
-
-        bafana.addPlayer(young);
+        LeagueTeam<FootBallTeam> liverpool = new LeagueTeam<>("Liverpool");
+        LeagueTeam<FootBallTeam> chelsea = new LeagueTeam<>("Chelsea");
+        LeagueTeam<FootBallTeam> afc = new LeagueTeam<>("AFC Leopards");
+        LeagueTeam<FootBallTeam> gor = new LeagueTeam<>("Gor Mahia");
 
 
-        Team<SoccerPlayer> team = new Team<>("arrow");
-        team.addPlayer(ronaldo);
+        epl.addTeam(liverpool);
+        epl.addTeam(chelsea);
+        epl.addTeam(afc);
+        epl.addTeam(gor);
 
-        Team<FootballPlayer> harambee = new Team<>("Harambee");
-        FootballPlayer oliech = new FootballPlayer("Denis Oliech");
-        harambee.addPlayer(oliech);
-
-        Team<FootballPlayer> afc = new Team<>("AFC Leopards");
-        Team<FootballPlayer> tusker = new Team<>("Tusker");
-
-        afc.matchResult(tusker,3,1);
-//        afc.matchResult(bafana,2,1);
-
-//        tusker.matchResult(bafana,2,2);
-        tusker.matchResult(afc,1,0);
+        System.out.println(epl.getTeams());
 
 
-        System.out.println("Rankings");
-        System.out.println(afc.getName() + " : " + afc.ranking());
-        System.out.println(tusker.getName() + " : " + tusker.ranking());
+        System.out.println(epl.sortAllTeams());
 
 
-        System.out.println(afc.compareTo(tusker));
 
+//        BaseballPlayer young = new BaseballPlayer("Young");
+//        FootballPlayer tavan = new FootballPlayer("Tavan");
+//        SoccerPlayer ronaldo = new SoccerPlayer("Ronaldo");
+//
+//        Team<FootballPlayer> liverpool = new Team<>("Liverpool");
+////        liverpool.addPlayer(young);
+//        liverpool.addPlayer(tavan);
+////        liverpool.addPlayer(ronaldo);
+//
+//        System.out.println(liverpool.numOfPlayers());
+//
+//        Team<BaseballPlayer> bafana = new Team<>("Bafana");
+//
+//        bafana.addPlayer(young);
+//
+//
+//        Team<SoccerPlayer> team = new Team<>("arrow");
+//        team.addPlayer(ronaldo);
+//
+//        Team<FootballPlayer> harambee = new Team<>("Harambee");
+//        FootballPlayer oliech = new FootballPlayer("Denis Oliech");
+//        harambee.addPlayer(oliech);
+//
+//        Team<FootballPlayer> afc = new Team<>("AFC Leopards");
+//        Team<FootballPlayer> tusker = new Team<>("Tusker");
+//
+//        afc.matchResult(tusker, 3, 1);
+////        afc.matchResult(bafana,2,1);
+//
+////        tusker.matchResult(bafana,2,2);
+//        tusker.matchResult(afc, 1, 0);
+//
+//
+//        System.out.println("Rankings");
+//        System.out.println(afc.getName() + " : " + afc.ranking());
+//        System.out.println(tusker.getName() + " : " + tusker.ranking());
+//
+//
+//        System.out.println(afc.compareTo(tusker));
 
-        ArrayList<Integer> items = new ArrayList<>();
-        items.add(1);
-        items.add(2);
-        items.add(3);
-        items.add(4);
-        items.add(5);
-
-        printDoubled(items);
     }
-
-    private static void printDoubled(ArrayList<Integer> items) {
-        for (int i : items) System.out.println("i = " + i);
-    }
-
 }
